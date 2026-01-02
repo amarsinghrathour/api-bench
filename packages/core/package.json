@@ -1,0 +1,40 @@
+{
+  "name": "@apibench/core",
+  "version": "1.0.0",
+  "description": "Core utilities and types for ApiBench",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "api",
+    "benchmark",
+    "performance",
+    "testing"
+  ],
+  "author": "amarsinghrathour",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amarsinghrathour/api-bench.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/node-fetch": "^2.6.11",
+    "typescript": "^5.3.3"
+  }
+}
+
