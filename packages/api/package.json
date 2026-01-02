@@ -1,5 +1,5 @@
 {
-  "name": "@apibench/api",
+  "name": "@amarsinghrathour/api",
   "version": "1.0.0",
   "description": "API server for ApiBench",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
     "test": "echo \"No tests yet\""
   },
   "dependencies": {
-    "@apibench/core": "*",
+    "@amarsinghrathour/core": "*",
     "express": "^4.18.2",
     "cors": "^2.8.5"
   },

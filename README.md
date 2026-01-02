@@ -2,83 +2,28 @@
 
 A tool to check the speed and resilience of your API endpoints against multiple parallel or sequence requests.
 
+[![npm version](https://img.shields.io/npm/v/apibench.svg)](https://www.npmjs.com/package/apibench)
+[![npm downloads](https://img.shields.io/npm/dm/apibench.svg)](https://www.npmjs.com/package/apibench)
+
+## Installation
+
+```bash
+npm install -g apibench
+```
+
+Or use with npx:
+
+```bash
+npx apibench run --url "https://api.github.com/zen"
+```
+
 ## Quick Start
 
-### Installation
+After installation, use the CLI:
 
 ```bash
-npm install
-npm run build
+apibench run --url "https://api.github.com/zen" --iterations 10
 ```
-
-### CLI Usage
-
-After building, you can use the CLI in several ways:
-
-#### Method 1: Direct execution (recommended)
-
-```bash
-cd packages/cli
-node dist/cli.js run --url "https://api.github.com/zen"
-```
-
-#### Method 2: Link globally (use `apibench` command anywhere) ⭐ Recommended
-
-```bash
-# From the CLI package directory
-cd packages/cli
-npm link
-
-# Now you can use it from anywhere:
-apibench run --url "https://api.github.com/zen"
-
-# To unlink later:
-npm unlink -g apibench
-```
-
-#### Method 3: Add to PATH (Unix/Mac)
-
-```bash
-# Add to your ~/.zshrc or ~/.bashrc
-export PATH="$PATH:/path/to/apibench/packages/cli/dist"
-
-# Then use directly:
-apibench run --url "https://api.github.com/zen"
-```
-
-### Web UI Usage
-
-After building, you can run the web application in two ways:
-
-#### Development Mode (with hot reload)
-
-```bash
-cd packages/web
-npm run dev
-```
-
-The web UI will be available at **http://localhost:3000**
-
-#### Production Mode (after build)
-
-```bash
-# Build the web app (already done if you ran npm run build from root)
-cd packages/web
-npm run build
-
-# Start the production server
-npm start
-```
-
-The web UI will be available at **http://localhost:3000**
-
-**Note:** The web application provides a user-friendly interface where you can:
-- Enter API endpoint URLs
-- Configure HTTP methods (GET, POST, PUT, etc.)
-- Set number of iterations
-- Toggle between parallel and sequential requests
-- View detailed statistics and response time distribution
-- See results in a table format
 
 ## Features
 
@@ -93,7 +38,7 @@ The web UI will be available at **http://localhost:3000**
 
 ## Usage Examples
 
-> **Note:** These examples assume you've linked the CLI globally using `npm link` (see [CLI Usage](#cli-usage) above). If not, use `node dist/cli.js` from the `packages/cli` directory instead.
+> **Note:** These examples assume you've installed `apibench` globally (`npm install -g apibench`) or are using `npx apibench`.
 
 ### Basic Usage
 
@@ -266,21 +211,23 @@ apibench/
 
 ## Development
 
-### Setup
+### Building from Source
 
 ```bash
+# Clone the repository
+git clone https://github.com/amarsinghrathour/api-bench.git
+cd api-bench
+
 # Install dependencies
 npm install
 
 # Build all packages
 npm run build
-```
 
-### Running the CLI
-
-```bash
+# Link CLI for local development
 cd packages/cli
-node dist/cli.js run --url "https://api.github.com/zen"
+npm link
+apibench run --url "https://api.github.com/zen"
 ```
 
 ### Running the Web UI
@@ -300,6 +247,15 @@ npm start      # Start the production server
 ```
 Open **http://localhost:3000** in your browser.
 
+**Note:** The web application provides a user-friendly interface where you can:
+- Enter API endpoint URLs
+- Configure HTTP methods (GET, POST, PUT, etc.)
+- Set number of iterations
+- Toggle between parallel and sequential requests
+- View detailed statistics and response time distribution
+- See results in a table format
+- Configure custom headers and request body
+
 ### Running the API Server
 
 ```bash
@@ -312,27 +268,32 @@ The API server will run on **http://localhost:3000** (or the port specified in t
 
 ## Packages
 
-### @apibench/core
-Shared package containing common utilities, types, and functions used by all other packages.
+### Published on npm
 
-### apibench (CLI)
-Command-line interface for testing API endpoints from the terminal.
+- **apibench** - CLI tool (install with `npm install -g apibench`)
+- **@amarsinghrathour/core** - Core utilities package
 
-### @apibench/api
-REST API server that provides endpoints for running tests programmatically.
+### Development Packages
 
-### @apibench/web
-Next.js web application with a user-friendly interface for testing API endpoints.
+- **@amarsinghrathour/api** - REST API server for running tests programmatically
+- **@amarsinghrathour/web** - Next.js web application with a user-friendly interface
 
-**Usage:**
+**Web UI Usage:**
 - Development: `cd packages/web && npm run dev` → http://localhost:3000
 - Production: `cd packages/web && npm run build && npm start` → http://localhost:3000
 
-**Features:**
+**Web UI Features:**
 - Interactive form to configure API tests
 - Real-time statistics display
 - Response time visualization
 - Results table with detailed information
+- Support for custom headers and request body
+
+## Links
+
+- **npm Package**: https://www.npmjs.com/package/apibench
+- **GitHub Repository**: https://github.com/amarsinghrathour/api-bench
+- **Core Package**: https://www.npmjs.com/package/@amarsinghrathour/core
 
 ## License
 

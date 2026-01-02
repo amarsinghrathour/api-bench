@@ -1,6 +1,6 @@
 {
-  "name": "@apibench/core",
-  "version": "1.0.0",
+  "name": "@amarsinghrathour/core",
+  "version": "1.0.1",
   "description": "Core utilities and types for ApiBench",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
